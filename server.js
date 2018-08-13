@@ -1,8 +1,10 @@
 const http = require('http');
-const app  = require('./app');
+const app = require('./app');
 
 const port = process.env.PORT || 3000;
 
 const server = http.createServer(app);
 
-server.listen(port);
+app.listen(port, function() {
+  console.log(`Hey, server is runing on hocalhost:${port}`);
+})
