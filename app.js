@@ -10,7 +10,7 @@ const orderRoutes   = require('./api/routes/orders');
 
 mongoose.connect(
                   'mongodb://admin:' + process.env.MONGO_ATLAS_PW + '@cluster0-shard-00-00-vgwo3.mongodb.net:27017,cluster0-shard-00-01-vgwo3.mongodb.net:27017,cluster0-shard-00-02-vgwo3.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true',
-                  { useNewUrlParser: true }
+                  {useMongoClient: true}
                 );
 
 app.use(morgan('dev'));
